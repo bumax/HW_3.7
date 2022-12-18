@@ -9,12 +9,12 @@ var n = Convert.ToInt32(Console.ReadLine());
 double[,] GetMatrix(int sizeCol = 10, int sizeRow = 10, int minVal = 0, int maxVal = 100, int precision = 2) // precision - количество знаков, после запятой
 {
     double[,] result = new double[sizeCol, sizeRow];
-    precision = (int)Math.Pow(10,precision); // расчитываем, на сколько разрядов смещать случайное число
+    precision = (int)Math.Pow(10, precision); // расчитываем, на сколько разрядов смещать случайное число
     for (int i = 0; i < sizeCol; i++)
     {
         for (int j = 0; j < sizeRow; j++)
         {
-            result[i, j] = new Random().Next(minVal * precision, maxVal * precision + 1) / (double)precision;
+            result[i, j] = new Random().Next(minVal * precision, (maxVal + 1) * precision) / (double)precision;
         }
     }
     return result;
@@ -32,4 +32,4 @@ void Print2DArray(double[,] array)
     }
 }
 
-Print2DArray(GetMatrix(m,n));
+Print2DArray(GetMatrix(m, n));
