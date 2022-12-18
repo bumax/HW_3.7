@@ -5,8 +5,6 @@ var m = Convert.ToInt32(Console.ReadLine());
 Console.Write("Введите индекс строки элемента: ");
 var n = Convert.ToInt32(Console.ReadLine());
 
-var sizeCol = new Random().Next(1, 101);
-var sizeRow = new Random().Next(1, 101);
 int[,] GetRandom2DArray(int sizeCol = 10, int sizeRow = 10, int minVal = 0, int maxVal = 100)
 {
     int[,] result = new int[sizeCol, sizeRow];
